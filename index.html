@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<h1>To Do List</h1>
+
+<table id="to-do-items">
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Deadline</th>
+        <th>Done</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Learn HTML</td>
+        <td>15.03.2019</td>
+        <td><input type="checkbox" title="Done"></td>
+    </tr>
+    <tr>
+        <td>Learn CSS</td>
+        <td>16.03.2019</td>
+        <td><input type="checkbox" title="Done"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+<h3>Add new item</h3>
+<form id="create-item-form">
+    <input type="text" name="description" title="Description" placeholder="Description"/>
+    <input type="datetime-local" name="deadline" title="Deadline"/>
+    <button type="submit">Save</button>
+</form>
+
+<script src="js/lib/jquery-3.3.1.js"></script>
+<script src="js/to-do-list.js"></script>
+
+</body>
+</html>
