@@ -4,35 +4,64 @@
     <meta charset="UTF-8">
     <title>To Do List</title>
 
+    <!--fa-->
+    <link rel="stylesheet"
+          href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+            integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous">
+    </script>
+
+    <!--css-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-<h1>To Do List</h1>
+<div class="container">
+    <h1 class="p-5">To Do List</h1>
 
-<table id="to-do-items">
-    <thead>
-    <tr>
-        <th>Description</th>
-        <th>Deadline</th>
-        <th>Done</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!--<tr>-->
+    <table id="to-do-items">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Done</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--<tr>-->
         <!--<td>Learn HTML</td>-->
         <!--<td>15.03.2019</td>-->
         <!--<td><input type="checkbox" title="Done"></td>-->
-    <!--</tr>-->
-    </tbody>
-</table>
+        <!--</tr>-->
+        </tbody>
+    </table>
 
-<h3>Add new item</h3>
-<form id="create-item-form">
-    <input type="text" name="description" title="Description" placeholder="Description"/>
-    <input type="datetime-local" name="deadline" title="Deadline"/>
-    <button type="submit">Save</button>
-</form>
+    <h3 class="p-2">Add new item</h3>
+    <form id="create-item-form">
+        <input type="text" name="description" title="Description" placeholder="Description"/>
+        <input type="datetime-local" name="deadline" title="Deadline"/>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <script src="js/lib/jquery-3.3.1.js"></script>
 <script src="js/to-do-list.js"></script>

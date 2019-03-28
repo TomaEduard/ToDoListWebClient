@@ -18,6 +18,7 @@ window.ToDoList = {
         }).done(function (response) {
             console.log(response);
             // reload items table
+            ToDoList.getItems();
 
         });
     },
@@ -27,11 +28,13 @@ window.ToDoList = {
 
         // Transform date String(from API)
         var deadline = new Date(item.deadline).toLocaleDateString('ro-RO');
+        var checkAttribute = item.done ? 'checked' : 'ASD';
 
         return `<tr>
 <td class="description">${item.description}</td>
 <td class="deadline">${deadline}</td>
-<td><input type="checkbox" class="mark-done" title="Done"></td>
+<td><input type="checkbox" ${checkAttribute} class="mark-done" title="Done"></td>
+<td><a href="#" class="fa fa-trash text-danger delete data-id="${item.id}""></a></td>
 </tr>
 `
     },
@@ -58,9 +61,24 @@ window.ToDoList = {
         });
     },
 
+    // Delete item
+    deleteItems: function (id) {
+        $.ajax({
+            url: ToDoList.apiUrl + '?id=' + id,
+            method: "DELETE",
+        }).done(function (response) {
+            console.log(response);
+
+            // reload items table
+            ToDoList.getItems();
+        });
+    },
+
+
+    //
+
     // add item
     bindEvents: function () {
-
         $("#create-item-form").submit(function (event) {
             event.preventDefault();
 
@@ -71,7 +89,15 @@ window.ToDoList = {
             return false;
         });
 
-    }
+
+        $("#to-do-items tbody").delegate('.delete', 'click', function () {
+            var id = $(this).data('id');
+
+            ToDoList.deleteItems(id);
+
+        });
+
+    },
 };
 
 ToDoList.getItems();
